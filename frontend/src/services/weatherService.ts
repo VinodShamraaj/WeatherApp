@@ -1,4 +1,5 @@
 import axiosInstance from "@/lib/axios";
+import { AxiosError } from "axios";
 
 export const fetchWeatherData = async (city: string, days: number) => {
   try {
@@ -7,11 +8,15 @@ export const fetchWeatherData = async (city: string, days: number) => {
     });
 
     return response.data;
-  } catch (error: any) {
-    const errorMessage =
-      error.response?.data?.error || "Failed to fetch weather data.";
-
-    console.error(errorMessage);
-    return { error: errorMessage };
+  } catch (error: unknown) {
+    // Log error From server
+    if (error instanceof AxiosError) {
+      const errorMessage =
+        error.response?.data.error || "Failed to fetch weather data.";
+      console.error(error.message);
+      return { error: errorMessage };
+    } else {
+      return { error: "Failed to fetch weather data." };
+    }
   }
 };

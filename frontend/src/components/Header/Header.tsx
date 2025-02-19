@@ -1,4 +1,4 @@
-import { Button, Icon, Link, Typography } from "@mui/material";
+import { Button, Link, Typography } from "@mui/material";
 
 import CloudIcon from "@/common/icons/CloudIcon";
 import routes from "@/common/constants/routeConstants";

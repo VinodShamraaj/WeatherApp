@@ -7,10 +7,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  background-color: #222222;
+  background-color: #32343d;
   border-radius: 20px;
   box-shadow: 24px 24px 48px rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  padding: 20px;
   gap: 12px;
 }
 

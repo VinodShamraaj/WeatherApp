@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 
-import axios from "axios";
-import { Box, CircularProgress, Typography } from "@mui/material";
 import WeatherForm from "@/components/WeatherForm/WeatherForm";
+import ResultModal from "@/components/ResultModal/ResultModal";
+
+import { fetchWeatherData } from "@/services/weatherService";
 
 import style from "./weather.module.css";
-import { fetchWeatherData } from "@/services/weatherService";
-import ResultModal from "@/components/ResultModal/ResultModal";
 
 export default function WeatherPage() {
   const [city, setCity] = useState<string>("");

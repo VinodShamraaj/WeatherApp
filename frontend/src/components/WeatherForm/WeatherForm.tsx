@@ -1,11 +1,6 @@
-import { Fragment, useState } from "react";
-import {
-  Box,
-  TextField,
-  Button,
-  Typography,
-  CircularProgress,
-} from "@mui/material";
+import { FormEvent, Fragment, useState } from "react";
+
+import { Button, Typography, CircularProgress } from "@mui/material";
 import FormInput from "../FormInput/FormInput";
 
 import style from "./WeatherForm.module.css";
@@ -24,12 +19,13 @@ export default function WeatherForm({
   const [city, setCity] = useState("");
   const [days, setDays] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
     const dayValue = days || "0";
     onSearch(city, parseInt(dayValue));
   };
   return (
-    <div className={style.formWrapper}>
+    <form className={style.formWrapper} onSubmit={handleSubmit}>
       {isLoading ? (
         <CircularProgress />
       ) : (
@@ -51,7 +47,7 @@ export default function WeatherForm({
             onChange={(e) => setDays(e.target.value)}
             fullWidth
           />
-          <Button variant="contained" color="primary" onClick={handleSubmit}>
+          <Button type="submit" variant="contained" color="primary">
             Get Weather
           </Button>
           {error && (
@@ -61,6 +57,6 @@ export default function WeatherForm({
           )}
         </Fragment>
       )}
-    </div>
+    </form>
   );
 }

@@ -10,6 +10,7 @@ import {
 import "./globals.css";
 import Header from "@/components/Header/Header";
 
+// Setup Theme
 const theme = createTheme({
   palette: {
     primary: {

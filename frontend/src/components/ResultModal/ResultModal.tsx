@@ -1,4 +1,4 @@
-import { Box, Button, Card, Modal, Typography } from "@mui/material";
+import { Box, Button, Modal, Typography } from "@mui/material";
 
 import style from "./ResultModal.module.css";
 
@@ -24,11 +24,11 @@ export default function ResultModal({
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box className={style.modalCard} sx={{ bgcolor: "transparent" }}>
-        <Typography id="modal-modal-title" variant="h6">
+      <Box className={style.modalCard}>
+        <Typography id="modal-modal-title" variant="h6" color="secondary">
           {`Weather Result for ${city}`}
         </Typography>
-        <Typography id="modal-modal-title">
+        <Typography id="modal-modal-title" color="secondary">
           {`Average Temperature over ${days} days`}
         </Typography>
         <div className={style.temperatureWrapper}>

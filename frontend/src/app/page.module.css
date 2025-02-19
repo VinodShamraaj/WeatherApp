@@ -7,9 +7,9 @@
   position: fixed;
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 
 .navButton {
   width: fit-content;
-  margin-top: 12px;
 }

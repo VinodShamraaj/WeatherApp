@@ -1,7 +1,12 @@
 "use client";
 
 import { ReactNode } from "react";
-import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import {
+  CssBaseline,
+  GlobalStyles,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 
@@ -11,7 +16,7 @@ const theme = createTheme({
       main: "#a1aace",
     },
     secondary: {
-      main: "#dc004e",
+      main: "#ededed",
     },
   },
   typography: {
@@ -32,6 +37,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <GlobalStyles
+            styles={{
+              body: {
+                backgroundColor: "#32343d",
+                margin: 0,
+                padding: 0,
+                height: "100%",
+              },
+            }}
+          />
           <Header />
           {children}
         </ThemeProvider>

@@ -3,6 +3,14 @@ import { Button, Typography } from "@mui/material";
 import style from "./page.module.css";
 import routes from "@/common/constants/routeConstants";
 
+// Setup Homepage metadata
+export const metadata = {
+  title: "Homepage | Weather App",
+  description:
+    "Check the average temperature of a city over the past few days.",
+  keywords: "weather, temperature, forecast, city",
+};
+
 export default function HomePage() {
   return (
     <main className={style.mainWrapper}>

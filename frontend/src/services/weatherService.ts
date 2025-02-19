@@ -1,8 +1,8 @@
-import axios from "axios";
+import axiosInstance from "@/lib/axios";
 
 export const fetchWeatherData = async (city: string, days: number) => {
   try {
-    const response = await axios.get("/api/weather", {
+    const response = await axiosInstance.get("/api/weather", {
       params: { city, days },
     });
 

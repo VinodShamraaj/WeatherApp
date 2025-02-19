@@ -1,0 +1,15 @@
+.mainWrapper {
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+.navButton {
+  width: fit-content;
+  margin-top: 12px;
+}
